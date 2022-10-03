@@ -7,6 +7,7 @@ import CardResident from './components/CardResident'
 import FilterList from './components/FilterList'
 import ErrorScreen from './components/ErrorScreen'
 import Loader from './components/Loader'
+import Pagination from './components/Pagination'
 
 function App() {
   const [location, setLocation] = useState()
@@ -15,7 +16,7 @@ function App() {
   const [hasError, setHasError] = useState(false)
   const [loader, setLoader] = useState(true)
   const [currentPage,setCurrentPage] = useState(1)
-  const [postsPerPage,setPostsPerPage] = useState(10)
+  const [postsPerPage,setPostsPerPage] = useState(12)
 
   // const URL_ALL = `https://rickandmortyapi.com/api/location`
   // const URL = `https://rickandmortyapi.com/api/location/3`
@@ -57,11 +58,16 @@ function App() {
     }
   }
 
-  console.log(searchInput, suggestedList);
+
 
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
-  const currentPosts = posts.slice(indexOfFirstPost,indexOfLastPost)
+  const currentPosts = location?.residents.slice(indexOfFirstPost,indexOfLastPost)
+
+  const paginate = (pageNumber) => setCurrentPage (pageNumber)
+  
+  console.log(location?.residents );
+  console.log('>>>>>',currentPosts);
 
   return (
     <div className="App">
@@ -84,10 +90,11 @@ function App() {
             <div className='container'>
               <div className='container-card'>
                 {
-                  location?.residents.map(url => (<CardResident key={url} url={url} />))
+                 currentPosts?.map(url => (<CardResident key={url} url={url} />))
                 }
               </div>
             </div>
+            <Pagination postsPerPage={postsPerPage} location={location} paginate={paginate}/>
           </div>
       }
         </div>
