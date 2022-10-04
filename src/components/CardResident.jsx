@@ -41,9 +41,9 @@ const CardResident = ({ url }) => {
                     </li>
                 </ul>
             </section>
-            <a>
+            {/* <a>
                 <i className='bx bx-right-arrow-alt'></i>
-            </a>
+            </a> */}
 
         </article>
     )

@@ -87,7 +87,7 @@ function App() {
                 }
               </div>
             </div>
-            <Pagination postsPerPage={postsPerPage} location={location} paginate={paginate}/>
+            <Pagination postsPerPage={postsPerPage} location={location} paginate={paginate} currentPage={currentPage}/>
           </div>
       }
         </div>
