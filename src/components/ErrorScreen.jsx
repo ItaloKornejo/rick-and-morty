@@ -2,7 +2,9 @@ import React from 'react'
 
 const ErrorScreen = () => {
   return (
-    <h2 >Not FOUND Again</h2>
+   <div className='unavailable'>
+    <h2>location not available</h2>
+   </div>
   )
 }
 

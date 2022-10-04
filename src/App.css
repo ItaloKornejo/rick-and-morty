@@ -273,6 +273,13 @@ img{
 }
 
 
+.unavailable{
+  margin: 5rem;
+  padding: 2rem;
+  text-align: center;
+  color: var(--color5);
+}
+
 @media (min-width: 470px) {
 
   header{
