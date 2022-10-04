@@ -9,12 +9,18 @@ if(location){
     }
 }
 
+const handleBC = (page) => {
+    if(page===currentPage)
+    return ({backgroundColor : 'var(--color5)'})
+    else return ({backgroundColor : 'var(--color6)'})
+}
+
   return (
     <nav>
         <ul className='pagination'>
         {
            (pageNumbers.length > 1) ? <> {pageNumbers.map( number => (
-            <li key={number} className='page__item'>
+            <li key={number} className='page__item' style={handleBC(number)}>
                 <a onClick={() => paginate(number)} className='page__link' >
                     {number}
                 </a>
