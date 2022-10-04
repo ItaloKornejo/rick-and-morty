@@ -18,8 +18,6 @@ function App() {
   const [currentPage,setCurrentPage] = useState(1)
   const [postsPerPage,setPostsPerPage] = useState(12)
 
-  // const URL_ALL = `https://rickandmortyapi.com/api/location`
-  // const URL = `https://rickandmortyapi.com/api/location/3`
 
   useEffect(() => {
     let idRandom = getRandomNumber()
@@ -58,17 +56,12 @@ function App() {
     }
   }
 
-
-
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
   const currentPosts = location?.residents.slice(indexOfFirstPost,indexOfLastPost)
 
   const paginate = (pageNumber) => setCurrentPage (pageNumber)
   
-  console.log(location?.residents );
-  console.log('>>>>>',currentPosts);
-
   return (
     <div className="App">
       {
