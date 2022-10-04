@@ -6,9 +6,7 @@ const FilterList = ({suggestedList,setSearchInput}) => {
         setSearchInput(id)
         console.log(id);
     }
-
-    // console.log(suggestedList);s
-
+    
   return (
     <ul className='suggested_list'>
         {

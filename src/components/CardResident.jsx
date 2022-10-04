@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Loader from './Loader'
 
 const CardResident = ({ url }) => {
 
@@ -20,9 +21,9 @@ const CardResident = ({ url }) => {
     
     return (
         <article className='content-card'>
-
-
-            <div className='img-card'>
+            {
+                resident ? <> 
+                <div className='img-card'>
                 <img src={resident?.image} alt="" />
                 <div className='status-resident'>
                     {renderStatus(resident?.status)}
@@ -44,6 +45,11 @@ const CardResident = ({ url }) => {
             {/* <a>
                 <i className='bx bx-right-arrow-alt'></i>
             </a> */}
+                
+                </> : <Loader/>
+            }
+
+            
 
         </article>
     )

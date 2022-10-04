@@ -56,9 +56,9 @@ function App() {
     }
   }
 
-  const indexOfLastPost = currentPage * postsPerPage
-  const indexOfFirstPost = indexOfLastPost - postsPerPage
-  const currentPosts = location?.residents.slice(indexOfFirstPost,indexOfLastPost)
+  const indexOfLastLocation = currentPage * postsPerPage
+  const indexOfFirstLocation = indexOfLastLocation - postsPerPage
+  const currentLocationPage = location?.residents.slice(indexOfFirstLocation,indexOfLastLocation)
 
   const paginate = (pageNumber) => setCurrentPage (pageNumber)
   
@@ -83,7 +83,7 @@ function App() {
             <div className='container'>
               <div className='container-card'>
                 {
-                 currentPosts?.map(url => (<CardResident key={url} url={url} />))
+                 currentLocationPage?.map(url => (<CardResident key={url} url={url} />))
                 }
               </div>
             </div>
